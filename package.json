@@ -1,0 +1,61 @@
+{
+  "name": "pdreport",
+  "main": "./lib/index.js",
+  "bin": {
+    "pdreport": "./lib/index.js"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.14",
+    "@types/node": "^22.10.5",
+    "chalk": "^4.1.2",
+    "commander": "^13.0.0",
+    "figlet": "^1.8.0",
+    "got": "^11.8.3",
+    "jest": "^29.7.0",
+    "lodash": "^4.17.21",
+    "ora": "^5.4.1",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!**/node_modules/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "ts",
+      "tsx"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf lib && tsc -p .",
+    "local-install": "npm run reinstall && npm run build && npm i -g ../pdreport",
+    "local-update": "npm uninstall -g pdreport && npm run local-install",
+    "reinstall": "rm -rf ./node_modules ./package-lock.json && npm install"
+  }
+}
