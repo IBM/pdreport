@@ -60,7 +60,7 @@ A CLI for generating reports based on PagerDuty data.
 1. Clone this repo
 
     ```sh
-    git clone git@github.ibm.com:cfjohnst/pdreport.git
+    git clone https://github.com/IBM/pdreport.git
     ```
 
 1. Install `pdreport` locally
@@ -84,7 +84,7 @@ A CLI for generating reports based on PagerDuty data.
 1. Once you have installed `pdreport`, use the command below to install any future updates:
 
     ```sh
-    !git co master && git pull && npm run local-update
+    git checkout main && git pull && npm run local-update
     ```
 
 ## Usage
